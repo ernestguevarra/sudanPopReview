@@ -61,7 +61,7 @@ names(x) <- c("S3M", "nLocalities", "CBS", "nLocalities")
 x
 ```
 
-There is general agreement between the two lists with regard to the localities that they report on. The differences between North Darfur, South Darfur and West Darfur is accounted for the IDP camps in each state that have been counted as separate "localities" or survey domain/area in the S3MII (see next point below on IDP camps).
+There is general agreement between the two lists with regard to the localities that they report on. The differences between North Darfur, South Darfur and West Darfur is accounted for by the IDP camps in each state that have been counted as separate "localities" or survey domain/area in the S3MII (see next point below on IDP camps).
 
 When actual locality names are compared between the two lists, however, there is variance across the names which is already expected. For the most part, locality names can be matched. When matching, we will use the locality results for S3MII as the standard for the spelling and will adjust spelling from CBS accordingly.
 
@@ -77,12 +77,14 @@ sudan::population_CBS[is.na(sudan::population_CBS$pop), ]
 
 The possible solution will be to find the data for this from the UNFPA data that was shared earlier. On review, we couldn't match these locality names with the names on the UNFPA list. This might be due to spelling or that the UNFPA list does not have the most current locality list.
 
-We would need UNICEF to tell us how it would like to deal with these missing populations. The possible approaches we will take will be to look at these localities from the map and try to see where they are located and then match to possible previous localities where they may have come from and then from there impute a possible popluation size based on overall population of the state and then substracting the population of all other localities. This will be a fudge of the data but this is the closest we can do with imputing the population size.
-
-Using the CBS data will also mean using the 2018 popoulation projections from the UNFPA data when imputing. UNICEF will need to confirm that this is the year population it wants us to use.
+We would need UNICEF to tell us how it would like to deal with these missing populations.
 
 # IDP camps
 
 In the previous results, we have agreed with UNICEF that we will treat the IDP camps as if they were their own "locality" or their own survey domain when reporting results at the locality level and then including the IDP camp data/results when estimating the indicators for the state in which they are located. So, For South Darfur, North Darfur and West Darfur estimates, the respective camps contributed to the sample.
 
-For this new analysis, we need UNICEF to indicate that this is still how they want to deal with the IDP camps. If so, then we need population sizes for the IDP camps. Without population size for IDP camps, we will estimate the indicators for each IDP camp as if they were localities but we will not be able to include them in the state level estimation without a population size.
+For this new analysis, we need UNICEF to indicate that this is still how they want to deal with the IDP camps. If so, then we need population sizes for the IDP camps. 
+
+Moving foreward, we will treat the IDP camps as separate special areas and estimate the indicators for these areas via bootstrap but we will not include these IDP camps in estimating the indicators for the state in which they are situated.
+
+
