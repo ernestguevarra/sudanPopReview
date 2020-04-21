@@ -1,0 +1,187 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[12pt,a4paper]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+            pdfauthor={Mark Myatt and Ernest Guevarra},
+            colorlinks=true,
+            linkcolor=blue,
+            filecolor=Maroon,
+            citecolor=blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=2cm]{geometry}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{setspace}
+%\usepackage{ebgaramond}
+
+\onehalfspacing
+
+\graphicspath{ {figures/} }
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{\vspace{8cm} \LARGE{Review of Sudan Population Data at Locality Level}}
+\author{Mark Myatt and Ernest Guevarra}
+\date{21 April 2020}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\newpage
+
+\hypertarget{comparing-s3m-results-locality-list-with-cbs-provided-locality-populations}{%
+\section{Comparing S3M results locality list with CBS-provided locality populations}\label{comparing-s3m-results-locality-list-with-cbs-provided-locality-populations}}
+
+Below is a table of number of localities in per state from the S3MII side-by-side with the table of number of localities per state from the CBS data on populations.
+
+\begin{verbatim}
+##                S3M nLocalities            CBS nLocalities
+## 1       Al-Gadarif          12        Gedaref          12
+## 2       Al-Gazeera           8         Gezira           8
+## 3        Blue Nile           7      Blue Nile           7
+## 4   Central Darfur           9 Central Darfur           9
+## 5      East Darfur           9    East Darfur           9
+## 6          Kassala          11        Kassala          11
+## 7         Khartoum           7       Khartoum           7
+## 8     North Darfur          19   North Darfur          18
+## 9  North Kourdofan           8 North Kordofan           8
+## 10        Northern           7       Northern           7
+## 11         Red Sea          10        Red Sea          10
+## 12      River Nile           7     River Nile           7
+## 13           Sinar           7         Sennar           7
+## 14    South Darfur          22   South Darfur          21
+## 15 South Kourdofan          17 South Kordofan          17
+## 16     West Darfur           9    West Darfur           8
+## 17  West Kourdofan          14  West Kordofan          14
+## 18      White Nile           9     White Nile           9
+\end{verbatim}
+
+There is general agreement between the two lists with regard to the localities that they report on. The differences between North Darfur, South Darfur and West Darfur is accounted for the IDP camps in each state that have been counted as separate ``localities'' or survey domain/area in the S3MII (see next point below on IDP camps).
+
+When actual locality names are compared between the two lists, however, there is variance across the names which is already expected. For the most part, locality names can be matched. When matching, we will use the locality results for S3MII as the standard for the spelling and will adjust spelling from CBS accordingly.
+
+\newpage
+
+\hypertarget{missing-population-for-specific-localities}{%
+\section{Missing population for specific localities}\label{missing-population-for-specific-localities}}
+
+The other issue now is the missing data on population for certain localities:
+
+\begin{verbatim}
+##              state    locality pop
+## 4        Blue Nile   Wd almahi  NA
+## 11  Central Darfur      Rokero  NA
+## 12  Central Darfur        Golo  NA
+## 33          Gezira   algurashi  NA
+## 42         Gedaref     Elmfaza  NA
+## 43         Gedaref     Basunda  NA
+## 74    North Darfur Dar-Alsalam  NA
+## 77    North Darfur     Am baro  NA
+## 80    North Darfur     alteena  NA
+## 81    North Darfur      Kranoy  NA
+## 102        Red Sea     Dordaib  NA
+## 105        Red Sea     Gabait   NA
+## 113     River Nile    Elbohira  NA
+## 157 South Kordofan     Alburam  NA
+## 158 South Kordofan       Heban  NA
+## 165    West Darfur  Jable mon   NA
+## 178  West Kordofan       Abyei  NA
+## 180  West Kordofan    Elmairam  NA
+## 182     White Nile        Guli  NA
+\end{verbatim}
+
+The possible solution will be to find the data for this from the UNFPA data that was shared earlier. On review, we couldn't match these locality names with the names on the UNFPA list. This might be due to spelling or that the UNFPA list does not have the most current locality list.
+
+We would need UNICEF to tell us how it would like to deal with these missing populations. The possible approaches we will take will be to look at these localities from the map and try to see where they are located and then match to possible previous localities where they may have come from and then from there impute a possible popluation size based on overall population of the state and then substracting the population of all other localities. This will be a fudge of the data but this is the closest we can do with imputing the population size.
+
+Using the CBS data will also mean using the 2018 popoulation projections from the UNFPA data when imputing. UNICEF will need to confirm that this is the year population it wants us to use.
+
+\hypertarget{idp-camps}{%
+\section{IDP camps}\label{idp-camps}}
+
+In the previous results, we have agreed with UNICEF that we will treat the IDP camps as if they were their own ``locality'' or their own survey domain when reporting results at the locality level and then including the IDP camp data/results when estimating the indicators for the state in which they are located. So, For South Darfur, North Darfur and West Darfur estimates, the respective camps contributed to the sample.
+
+For this new analysis, we need UNICEF to indicate that this is still how they want to deal with the IDP camps. If so, then we need population sizes for the IDP camps. Without population size for IDP camps, we will estimate the indicators for each IDP camp as if they were localities but we will not be able to include them in the state level estimation without a population size.
+
+\end{document}
